@@ -1,0 +1,21 @@
+<svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- BiblioGo modern text logo -->
+  <g transform="translate(110, 30)">
+    
+    <!-- "Biblio" part -->
+    <text x="-65" y="8" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#F8FAFC">Biblio</text>
+    
+    <!-- "Go" part with different styling -->
+    <text x="25" y="8" font-family="Arial, sans-serif" font-size="32" font-weight="300" fill="#A78BFA">Go</text>
+    
+    <!-- Small motion arrow/chevron -->
+    <path d="M 75 0 L 85 5 L 75 10" stroke="#34D399" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Decorative dot -->
+    <circle cx="-70" cy="-12" r="3" fill="#34D399" opacity="0.9"/>
+    
+    <!-- Subtle underline accent -->
+    <rect x="-80" y="15" width="35" height="2" rx="1" fill="#A78BFA" opacity="0.6"/>
+    
+  </g>
+</svg>
