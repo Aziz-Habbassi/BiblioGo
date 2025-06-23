@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView>
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.popAndPushNamed(context, HomeView.id);
+      Navigator.pushReplacementNamed(context, HomeView.id);
     });
   }
 
@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView>
         children: [
           LottieBuilder.asset(
             fit: BoxFit.cover,
-            "assets/images/Animation.json",
+            "assets/animations/Animation.json",
             alignment: Alignment.center,
           ),
           SvgPicture.asset("assets/images/bibliogo_text_logo_dark_theme.svg"),
