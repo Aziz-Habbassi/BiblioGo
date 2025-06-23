@@ -1,8 +1,8 @@
 import 'package:bibliogo/core/cubits/cubit/change_theme_cubit.dart';
+import 'package:bibliogo/features/views/home_view/home_view.dart';
 import 'package:bibliogo/features/views/splash_view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
   runApp(const BiblioGo());
@@ -17,9 +17,13 @@ class BiblioGo extends StatelessWidget {
       create: (context) => ChangeThemeCubit(),
       child: BlocBuilder<ChangeThemeCubit, ChangeThemeState>(
         builder: (context, state) {
-          return GetMaterialApp(
+          return MaterialApp(
+            routes: {
+              SplashView.id: (context) => SplashView(),
+              HomeView.id: (context) => HomeView(),
+            },
             theme: BlocProvider.of<ChangeThemeCubit>(context).themeData,
-            home: const SplashView(),
+            initialRoute: SplashView.id,
             debugShowCheckedModeBanner: false,
           );
         },
