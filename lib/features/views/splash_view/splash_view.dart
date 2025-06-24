@@ -16,6 +16,7 @@ class _SplashViewState extends State<SplashView>
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
+      if (!mounted) return;
       Navigator.pushReplacementNamed(context, HomeView.id);
     });
   }
