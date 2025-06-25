@@ -19,14 +19,16 @@ class HomeView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CoversListView(),
-                Text(
-                  "Best Seller",
-                  style: Styles.style1.copyWith(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
+                Padding(
+                  padding: const EdgeInsets.only(left: 15, bottom: 20),
+                  child: Text(
+                    "Best Seller",
+                    style: Styles.style1.copyWith(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 30),
               ],
             ),
           ),

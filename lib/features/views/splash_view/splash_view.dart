@@ -1,6 +1,6 @@
-import 'package:bibliogo/features/views/home_view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashViewState extends State<SplashView>
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       if (!mounted) return;
-      Navigator.pushReplacementNamed(context, HomeView.id);
+      context.go("/homeview");
     });
   }
 
