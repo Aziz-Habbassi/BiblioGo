@@ -1,3 +1,4 @@
+import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +18,7 @@ class _SplashViewState extends State<SplashView>
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       if (!mounted) return;
-      context.go("/homeview");
+      context.go(AppRouter.routehomeview);
     });
   }
 

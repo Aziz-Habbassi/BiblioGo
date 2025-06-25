@@ -11,9 +11,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: BlocProvider.of<ChangeThemeCubit>(context).themeData == lighttheme
-          ? SvgPicture.asset(lightlogo)
-          : SvgPicture.asset(darklogo),
+      title: BlocBuilder<ChangeThemeCubit, ChangeThemeState>(
+        builder: (context, state) {
+          return BlocProvider.of<ChangeThemeCubit>(context).themeData ==
+                  lighttheme
+              ? SvgPicture.asset(lightlogo)
+              : SvgPicture.asset(darklogo);
+        },
+      ),
 
       centerTitle: true,
       actions: [

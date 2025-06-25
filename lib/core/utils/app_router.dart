@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+  static const routehomeview = "/homeview";
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -13,7 +14,7 @@ abstract class AppRouter {
         },
       ),
       GoRoute(
-        path: '/homeview',
+        path: routehomeview,
         builder: (BuildContext context, GoRouterState state) {
           return const HomeView();
         },
