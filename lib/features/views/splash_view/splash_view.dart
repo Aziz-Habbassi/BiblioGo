@@ -6,7 +6,6 @@ import 'package:lottie/lottie.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
-  static const String id = "Splashview";
   @override
   State<SplashView> createState() => _SplashViewState();
 }
