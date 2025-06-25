@@ -1,7 +1,7 @@
 import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/core/utils/assets.dart';
 import 'package:bibliogo/core/utils/styles.dart';
-import 'package:bibliogo/features/views/home_view/widgets/best_seller_rating.dart';
+import 'package:bibliogo/features/views/home_view/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -51,13 +51,13 @@ class BestSellerItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        r"99 $",
+                        r"19.99$",
                         style: Styles.style2.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      BestSellerRating(),
+                      BookRating(),
                     ],
                   ),
                 ],
