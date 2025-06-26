@@ -37,7 +37,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      "Harry Potter and the goblet of Fire ",
+                      "Alex Schreiber Wildernes of the Eternal Oceans",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.style1,
