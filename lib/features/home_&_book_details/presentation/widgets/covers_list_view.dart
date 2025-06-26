@@ -1,4 +1,4 @@
-import 'package:bibliogo/features/views/home_view/widgets/cover_book_item.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/cover_book_item.dart';
 import 'package:flutter/material.dart';
 
 class CoversListView extends StatelessWidget {

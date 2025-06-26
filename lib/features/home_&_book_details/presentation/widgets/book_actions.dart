@@ -1,4 +1,4 @@
-import 'package:bibliogo/features/views/book_details_view/widgets/custom_button.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookActions extends StatelessWidget {

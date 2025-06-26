@@ -1,6 +1,6 @@
-import 'package:bibliogo/features/views/book_details_view/book_details_view.dart';
-import 'package:bibliogo/features/views/home_view/home_view.dart';
-import 'package:bibliogo/features/views/splash_view/splash_view.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/views/book_details_view.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/views/home_view.dart';
+import 'package:bibliogo/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 

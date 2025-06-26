@@ -1,4 +1,4 @@
-import 'package:bibliogo/features/views/home_view/widgets/best_seller_item.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListView extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/core/utils/assets.dart';
 import 'package:bibliogo/core/utils/styles.dart';
-import 'package:bibliogo/features/views/home_view/widgets/book_rating.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
