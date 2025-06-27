@@ -32,7 +32,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {
-            context.go(AppRouter.routesearchview);
+            context.push(AppRouter.routesearchview);
           },
           icon: Icon(Icons.search, size: 32),
         ),
