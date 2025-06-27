@@ -1,16 +1,24 @@
 import 'package:bibliogo/core/cubits/cubit/change_theme_cubit.dart';
+import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/core/utils/assets.dart';
 import 'package:bibliogo/core/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: IconButton(
+        onPressed: () {
+          BlocProvider.of<ChangeThemeCubit>(context).changeTheme();
+        },
+        icon: Icon(Icons.sunny, size: 32),
+      ),
       title: BlocBuilder<ChangeThemeCubit, ChangeThemeState>(
         builder: (context, state) {
           return BlocProvider.of<ChangeThemeCubit>(context).themeData ==
@@ -24,9 +32,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {
-            BlocProvider.of<ChangeThemeCubit>(context).changeTheme();
+            context.go(AppRouter.routesearchview);
           },
-          icon: Icon(Icons.sunny, size: 32),
+          icon: Icon(Icons.search, size: 32),
         ),
       ],
     );
