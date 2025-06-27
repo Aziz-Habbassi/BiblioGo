@@ -9,16 +9,16 @@ class SearchAppBar extends StatelessWidget {
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.greenAccent),
+          borderSide: BorderSide(color: Colors.deepPurpleAccent, width: 2),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.greenAccent),
+          borderSide: BorderSide(color: Colors.deepPurpleAccent, width: 3),
         ),
         suffixIcon: Icon(
           Icons.search_rounded,
           size: 32,
-          color: Colors.greenAccent,
+          color: Colors.deepPurpleAccent,
         ),
       ),
     );

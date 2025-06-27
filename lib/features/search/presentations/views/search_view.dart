@@ -13,7 +13,7 @@ class SearchView extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20, bottom: 5),
+              padding: const EdgeInsets.only(left: 20, bottom: 5, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
