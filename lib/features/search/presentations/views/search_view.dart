@@ -9,18 +9,23 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SearchAppBar(),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(left: 15, bottom: 10, top: 10),
-              child: Text(
-                "Best Seller",
-                style: Styles.style1.copyWith(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                ),
+              padding: const EdgeInsets.only(left: 20, bottom: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SafeArea(child: SearchAppBar()),
+                  Text(
+                    "Search Result",
+                    style: Styles.style1.copyWith(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
