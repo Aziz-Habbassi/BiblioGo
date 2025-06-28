@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 15, bottom: 20),
                   child: Text(
-                    "Best Seller",
+                    "Newest",
                     style: Styles.style1.copyWith(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
