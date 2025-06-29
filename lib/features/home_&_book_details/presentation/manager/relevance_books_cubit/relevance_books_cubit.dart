@@ -1,3 +1,4 @@
+import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/data/repos/home_repo_impl.dart';
 import 'package:bloc/bloc.dart';
 
@@ -13,8 +14,8 @@ class RelevanceBooksCubit extends Cubit<RelevanceBooksState> {
       (failure) {
         emit(RelevanceBooksFailure(errMessage: failure.errMessage));
       },
-      (success) {
-        emit(RelevanceBooksSuccess());
+      (books) {
+        emit(RelevanceBooksSuccess(books: books));
       },
     );
   }
