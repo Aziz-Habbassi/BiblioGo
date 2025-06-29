@@ -3,15 +3,17 @@ import 'package:bibliogo/core/utils/api_service.dart';
 import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
+  final ApiService apiService;
+
+  HomeRepoImpl({required this.apiService});
   @override
   Future<Either<Failures, List<BookModel>>> fetchNewestBooks() async {
     try {
-      final Map<String, dynamic> list = await ApiService(
-        dio: Dio(),
-      ).get(endpoint: "volumes?q=habits&langRestrict=eng&orderBy=newest");
+      final Map<String, dynamic> list = await apiService.get(
+        endpoint: "volumes?q=habits&langRestrict=eng&orderBy=newest",
+      );
       List<BookModel> books = [];
       for (var item in list['items']) {
         books.add(BookModel.fromJson(item));
@@ -25,9 +27,9 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      final Map<String, dynamic> list = await ApiService(
-        dio: Dio(),
-      ).get(endpoint: "volumes?q=habits&langRestrict=eng&orderBy=relevance");
+      final Map<String, dynamic> list = await apiService.get(
+        endpoint: "volumes?q=habits&langRestrict=eng&orderBy=relevance",
+      );
       List<BookModel> books = [];
       for (var item in list['items']) {
         books.add(BookModel.fromJson(item));
