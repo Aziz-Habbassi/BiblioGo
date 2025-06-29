@@ -1,4 +1,4 @@
-import 'package:bibliogo/core/cubits/cubit/change_theme_cubit.dart';
+import 'package:bibliogo/core/cubits/themes_cubit/change_theme_cubit.dart';
 import 'package:bibliogo/core/utils/app_router.dart';
 
 import 'package:flutter/material.dart';
