@@ -15,7 +15,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.17),
-          child: CoverBookItem(),
+          child: CoverBookItem(
+            imageUrl:
+                "https://en.m.wikipedia.org/wiki/File:No_image_available.svg",
+          ),
         ),
         Text(
           "Alex Schreiber Wildernes of the Eternal Oceans",

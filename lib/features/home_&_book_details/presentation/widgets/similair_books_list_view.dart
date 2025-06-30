@@ -11,7 +11,10 @@ class SimilairBooksListView extends StatelessWidget {
       child: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return CoverBookItem();
+          return CoverBookItem(
+            imageUrl:
+                "https://en.m.wikipedia.org/wiki/File:No_image_available.svg",
+          );
         },
         scrollDirection: Axis.horizontal,
       ),

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  setup();
   runApp(const BiblioGo());
 }
 
@@ -20,10 +21,13 @@ class BiblioGo extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => ChangeThemeCubit()),
         BlocProvider(
-          create: (context) => RelevanceBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) =>
+              RelevanceBooksCubit(getIt.get<HomeRepoImpl>())
+                ..fetchRevelanceBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
       ],
       child: BlocBuilder<ChangeThemeCubit, ChangeThemeState>(
