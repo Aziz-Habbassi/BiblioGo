@@ -2,6 +2,7 @@ import 'package:bibliogo/features/home_&_book_details/presentation/manager/relev
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/cover_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class CoversListView extends StatelessWidget {
   const CoversListView({super.key});
@@ -26,9 +27,12 @@ class CoversListView extends StatelessWidget {
             ),
           );
         } else if (state is RelevanceBooksLoading) {
-          return Text("");
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * .35,
+            child: SpinKitFadingCube(size: 100, color: Colors.deepPurpleAccent),
+          );
         } else {
-          return Icon(Icons.error);
+          return Center(child: Icon(Icons.error, size: 64));
         }
       },
     );
