@@ -1,5 +1,5 @@
 import 'package:bibliogo/core/utils/styles.dart';
-import 'package:bibliogo/features/home_&_book_details/presentation/widgets/best_seller_list_view.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/newest_books_list_view.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/covers_list_view.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/home_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
 
-          BestSellerListView(),
+          NewestBooksListView(),
         ],
       ),
     );
