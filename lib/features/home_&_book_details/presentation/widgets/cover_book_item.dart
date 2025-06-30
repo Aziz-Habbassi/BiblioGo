@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class CoverBookItem extends StatelessWidget {
   const CoverBookItem({super.key, required this.imageUrl});
@@ -7,13 +9,17 @@ class CoverBookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.56 / 4,
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 23, horizontal: 12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(
-            image: NetworkImage(imageUrl),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 23, horizontal: 12),
+        child: ClipRRect(
+          borderRadius: BorderRadiusGeometry.circular(8),
+          child: CachedNetworkImage(
+            errorWidget: (context, url, error) =>
+                Icon(Icons.error, color: Colors.deepPurpleAccent, size: 24),
             fit: BoxFit.fill,
+            imageUrl: imageUrl,
+            progressIndicatorBuilder: (context, url, progress) =>
+                SpinKitPulse(size: 32, color: Colors.deepPurpleAccent),
           ),
         ),
       ),
