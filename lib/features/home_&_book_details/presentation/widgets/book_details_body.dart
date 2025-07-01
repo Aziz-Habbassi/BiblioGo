@@ -12,7 +12,7 @@ class BookDetailsBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          const BookDetailsSection(),
+          BookDetailsSection(bookModel: bookModel),
           const SizedBox(height: 40),
           BookDetailsSimilaiSection(bookModel: bookModel),
         ],

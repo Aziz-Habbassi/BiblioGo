@@ -2,7 +2,7 @@ import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/core/utils/styles.dart';
 import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/book_rating.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:bibliogo/features/home_&_book_details/presentation/widgets/custom_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,9 +24,8 @@ class NewestBookItem extends StatelessWidget {
               child: SizedBox(
                 height: 170,
                 width: 110,
-                child: CachedNetworkImage(
-                  fit: BoxFit.fill,
-                  imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+                child: CustomCachedImage(
+                  imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ?? "",
                 ),
               ),
             ),
