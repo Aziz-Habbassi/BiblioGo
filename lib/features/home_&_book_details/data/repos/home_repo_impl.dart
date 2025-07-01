@@ -28,7 +28,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       final Map<String, dynamic> list = await apiService.get(
-        endpoint: "volumes?q=habits&langRestrict=eng&orderBy=relevance",
+        endpoint: "volumes?q=habits",
       );
       List<BookModel> books = [];
       for (var item in list['items']) {

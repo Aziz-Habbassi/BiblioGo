@@ -1,8 +1,10 @@
+import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/manager/relevance_books_cubit/relevance_books_cubit.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/cover_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
 
 class CoversListView extends StatelessWidget {
   const CoversListView({super.key});
@@ -19,9 +21,17 @@ class CoversListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return CoverBookItem(
-                  imageUrl:
-                      state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                return GestureDetector(
+                  onTap: () {
+                    context.go(
+                      AppRouter.routebookdetailsview,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: CoverBookItem(
+                    imageUrl:
+                        state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                  ),
                 );
               },
             ),

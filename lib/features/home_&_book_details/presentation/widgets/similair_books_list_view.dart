@@ -1,9 +1,11 @@
+import 'package:bibliogo/core/utils/app_router.dart';
 import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/cover_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
 
 class SimilairBooksListView extends StatefulWidget {
   const SimilairBooksListView({super.key, required this.bookModel});
@@ -33,14 +35,22 @@ class _SimilairBooksListViewState extends State<SimilairBooksListView> {
             child: ListView.builder(
               itemCount: state.similarBooks.length,
               itemBuilder: (context, index) {
-                return CoverBookItem(
-                  imageUrl:
-                      state
-                          .similarBooks[index]
-                          .volumeInfo!
-                          .imageLinks
-                          ?.thumbnail ??
-                      "",
+                return GestureDetector(
+                  onTap: () {
+                    context.go(
+                      AppRouter.routebookdetailsview,
+                      extra: state.similarBooks[index],
+                    );
+                  },
+                  child: CoverBookItem(
+                    imageUrl:
+                        state
+                            .similarBooks[index]
+                            .volumeInfo!
+                            .imageLinks
+                            ?.thumbnail ??
+                        "",
+                  ),
                 );
               },
               scrollDirection: Axis.horizontal,
@@ -49,7 +59,13 @@ class _SimilairBooksListViewState extends State<SimilairBooksListView> {
         } else if (state is SimilarBooksFailure) {
           return Center(child: Icon(Icons.error, size: 64));
         } else {
-          return SpinKitFadingCube(size: 100, color: Colors.deepPurpleAccent);
+          return Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: const SpinKitFadingCircle(
+              size: 50,
+              color: Colors.deepPurpleAccent,
+            ),
+          );
         }
       },
     );

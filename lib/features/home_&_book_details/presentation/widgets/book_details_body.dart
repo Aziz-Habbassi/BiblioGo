@@ -10,11 +10,13 @@ class BookDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        children: [
-          BookDetailsSection(bookModel: bookModel),
-          const SizedBox(height: 40),
-          BookDetailsSimilaiSection(bookModel: bookModel),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: BookDetailsSection(bookModel: bookModel)),
+          const SliverToBoxAdapter(child: SizedBox(height: 40)),
+          SliverToBoxAdapter(
+            child: BookDetailsSimilaiSection(bookModel: bookModel),
+          ),
         ],
       ),
     );
