@@ -15,7 +15,7 @@ class NewestBookItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
       child: GestureDetector(
         onTap: () {
-          context.go(AppRouter.routebookdetailsview);
+          context.go(AppRouter.routebookdetailsview, extra: bookModel);
         },
         child: Row(
           children: [
