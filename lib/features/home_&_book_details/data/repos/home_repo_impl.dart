@@ -39,4 +39,22 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failures, List<BookModel>>> fetchSimilarBooks({
+    required String category,
+  }) async {
+    try {
+      final Map<String, dynamic> list = await apiService.get(
+        endpoint: "volumes?q=$category&langRestrict=eng&orderBy=relevance",
+      );
+      List<BookModel> books = [];
+      for (var item in list['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }

@@ -13,6 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      forceMaterialTransparency: true,
       leading: IconButton(
         onPressed: () {
           BlocProvider.of<ChangeThemeCubit>(context).changeTheme();

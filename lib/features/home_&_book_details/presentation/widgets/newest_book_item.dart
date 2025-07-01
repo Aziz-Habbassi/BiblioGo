@@ -19,11 +19,15 @@ class NewestBookItem extends StatelessWidget {
         },
         child: Row(
           children: [
-            SizedBox(
-              height: 170,
-              width: 110,
-              child: CachedNetworkImage(
-                imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(12),
+              child: SizedBox(
+                height: 170,
+                width: 110,
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+                ),
               ),
             ),
             SizedBox(width: 30),
