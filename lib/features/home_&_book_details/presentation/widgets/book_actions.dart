@@ -31,11 +31,13 @@ class BookActions extends StatelessWidget {
         CustomButton(
           ontap: () async {
             final Uri uri = Uri.parse(bookModel.volumeInfo!.previewLink ?? "");
+            final ScaffoldMessengerState scaffoldMessenger =
+                ScaffoldMessenger.of(context);
             if (await canLaunchUrl(uri) &&
                 bookModel.accessInfo!.viewability != "NO_PAGES") {
               launchUrl(uri);
             } else {
-              ScaffoldMessenger.of(context).showSnackBar(
+              scaffoldMessenger.showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.deepPurpleAccent,
                   content: Text(
