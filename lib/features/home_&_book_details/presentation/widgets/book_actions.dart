@@ -1,16 +1,26 @@
+import 'package:bibliogo/core/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookActions extends StatelessWidget {
-  const BookActions({super.key});
-
+  const BookActions({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomButton(
-          text: r"19.99$",
+          ontap: () async {
+            final Uri uri = Uri.parse(
+              bookModel.volumeInfo!.canonicalVolumeLink ?? "",
+            );
+            if (await canLaunchUrl(uri)) {
+              launchUrl(uri);
+            }
+          },
+          text: "Full book",
           textColor: Colors.deepPurpleAccent,
           backgroundColor: Colors.white,
           borderRadius: BorderRadius.only(
@@ -19,6 +29,33 @@ class BookActions extends StatelessWidget {
           ),
         ),
         CustomButton(
+          ontap: () async {
+            final Uri uri = Uri.parse(bookModel.volumeInfo!.previewLink ?? "");
+            if (await canLaunchUrl(uri) &&
+                bookModel.accessInfo!.viewability != "NO_PAGES") {
+              launchUrl(uri);
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.deepPurpleAccent,
+                  content: Text(
+                    "Free Preview is not available",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
+                  behavior: SnackBarBehavior.floating,
+
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(12),
+                  ),
+                ),
+              );
+            }
+          },
           text: "Free Preview",
           textColor: Colors.white,
           backgroundColor: Colors.deepPurpleAccent,

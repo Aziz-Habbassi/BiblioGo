@@ -26,7 +26,7 @@ class BookRating extends StatelessWidget {
             style: Styles.style2.copyWith(fontSize: 16),
           ),
           Text(
-            " $ratingCount",
+            " ($ratingCount)",
             style: Styles.style2.copyWith(fontSize: 16, color: Colors.grey),
           ),
         ],
