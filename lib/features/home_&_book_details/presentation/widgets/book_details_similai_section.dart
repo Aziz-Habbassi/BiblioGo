@@ -1,5 +1,5 @@
 import 'package:bibliogo/core/utils/styles.dart';
-import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
+import 'package:bibliogo/core/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/similair_books_list_view.dart';
 import 'package:flutter/widgets.dart';
 

@@ -1,4 +1,4 @@
-import 'package:bibliogo/features/home_&_book_details/data/models/book_model/book_model.dart';
+import 'package:bibliogo/core/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/book_details_section.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/widgets/book_details_similai_section.dart';
 import 'package:flutter/material.dart';
