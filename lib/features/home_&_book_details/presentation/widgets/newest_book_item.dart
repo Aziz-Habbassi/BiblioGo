@@ -59,7 +59,10 @@ class NewestBookItem extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      BookRating(),
+                      BookRating(
+                        avgRating: bookModel.volumeInfo!.averageRating,
+                        ratingCount: bookModel.volumeInfo!.ratingsCount,
+                      ),
                     ],
                   ),
                 ],

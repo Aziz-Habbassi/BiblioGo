@@ -16,6 +16,9 @@ class VolumeInfo {
   String? printType;
   List<dynamic>? categories;
   String? maturityRating;
+  num? averageRating;
+  num? ratingsCount;
+
   bool? allowAnonLogging;
   String? contentVersion;
   PanelizationSummary? panelizationSummary;
@@ -46,6 +49,8 @@ class VolumeInfo {
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.averageRating,
+    this.ratingsCount,
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
@@ -64,6 +69,8 @@ class VolumeInfo {
     pageCount: json['pageCount'] as int?,
     printType: json['printType'] as String?,
     categories: json['categories'] as List<dynamic>?,
+    averageRating: json['averageRating'] as num?,
+    ratingsCount: json['ratingsCount'] as num?,
     maturityRating: json['maturityRating'] as String?,
     allowAnonLogging: json['allowAnonLogging'] as bool?,
     contentVersion: json['contentVersion'] as String?,
