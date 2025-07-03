@@ -17,7 +17,7 @@ class BookActions extends StatelessWidget {
               bookModel.volumeInfo!.canonicalVolumeLink ?? "",
             );
             if (await canLaunchUrl(uri)) {
-              launchUrl(uri);
+              await launchUrl(uri);
             }
           },
           text: "Full book",
@@ -35,7 +35,7 @@ class BookActions extends StatelessWidget {
                 ScaffoldMessenger.of(context);
             if (await canLaunchUrl(uri) &&
                 bookModel.accessInfo!.viewability != "NO_PAGES") {
-              launchUrl(uri);
+              await launchUrl(uri);
             } else {
               scaffoldMessenger.showSnackBar(
                 SnackBar(

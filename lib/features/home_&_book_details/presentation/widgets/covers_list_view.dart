@@ -23,6 +23,9 @@ class CoversListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
+                    debugPrint(
+                      state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                    );
                     context.go(
                       AppRouter.routebookdetailsview,
                       extra: state.books[index],
