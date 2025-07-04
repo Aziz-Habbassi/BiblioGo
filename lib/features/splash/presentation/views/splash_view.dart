@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -15,9 +16,9 @@ class _SplashViewState extends State<SplashView>
   @override
   void initState() {
     super.initState();
+
     Future.delayed(Duration(seconds: 3), () {
-      if (!mounted) return;
-      context.go(AppRouter.routehomeview);
+      checkCategory();
     });
   }
 
@@ -36,5 +37,16 @@ class _SplashViewState extends State<SplashView>
         ],
       ),
     );
+  }
+
+  Future<void> checkCategory() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? category = prefs.getString("category");
+    if (!mounted) return;
+    if (category == null) {
+      context.go(AppRouter.routecategoryselection);
+    } else {
+      context.go(AppRouter.routehomeview);
+    }
   }
 }

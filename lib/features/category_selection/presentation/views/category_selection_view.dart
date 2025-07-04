@@ -6,6 +6,29 @@ class CategorySelectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTextField();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              "Choose The Category you want",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "SectraFine",
+                fontSize: 32,
+                color: Colors.greenAccent,
+              ),
+            ),
+
+            Text("(This only for The First Time)"),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              child: CustomTextField(),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
