@@ -1,6 +1,6 @@
 import 'package:bibliogo/core/utils/styles.dart';
-import 'package:bibliogo/features/home_&_book_details/presentation/widgets/newest_books_list_view.dart';
 import 'package:bibliogo/features/search/presentations/widgets/search_app_bar.dart';
+import 'package:bibliogo/features/search/presentations/widgets/search_books_list.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {
@@ -29,7 +29,7 @@ class SearchView extends StatelessWidget {
               ),
             ),
           ),
-          NewestBooksListView(),
+          SearchBooksList(),
         ],
       ),
     );

@@ -3,7 +3,6 @@ import 'package:bibliogo/core/models/book_model/book_model.dart';
 import 'package:bibliogo/features/search/data/repos/search_repo_impl.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
 part 'search_books_state.dart';
 
 class SearchBooksCubit extends Cubit<SearchBooksState> {
