@@ -3,6 +3,7 @@ import 'package:bibliogo/core/utils/api_service.dart';
 import 'package:bibliogo/core/models/book_model/book_model.dart';
 import 'package:bibliogo/features/home_&_book_details/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -20,7 +21,11 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure(errMessage: e.toString()));
+      if (e is DioException) {
+        return left(ServerFailure.fromDrioError(e));
+      } else {
+        return left(ServerFailure(errMessage: e.toString()));
+      }
     }
   }
 
@@ -36,7 +41,11 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure(errMessage: e.toString()));
+      if (e is DioException) {
+        return left(ServerFailure.fromDrioError(e));
+      } else {
+        return left(ServerFailure(errMessage: e.toString()));
+      }
     }
   }
 
@@ -54,7 +63,11 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure(errMessage: e.toString()));
+      if (e is DioException) {
+        return left(ServerFailure.fromDrioError(e));
+      } else {
+        return left(ServerFailure(errMessage: e.toString()));
+      }
     }
   }
 }
