@@ -1,6 +1,7 @@
 import 'package:bibliogo/core/utils/api_service.dart';
 import 'package:bibliogo/core/utils/service_locator.dart';
 import 'package:bibliogo/core/models/book_model/book_model.dart';
+import 'package:bibliogo/features/category_selection/presentation/views/category_selection_view.dart';
 import 'package:bibliogo/features/home_&_book_details/data/repos/home_repo_impl.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bibliogo/features/home_&_book_details/presentation/views/book_details_view.dart';
@@ -17,6 +18,7 @@ abstract class AppRouter {
   static const String routehomeview = "/homeview";
   static const String routebookdetailsview = "/BookDetailsView";
   static const String routesearchview = "/seachView";
+  static const String routecategoryselection = "/categorySelection";
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -49,6 +51,12 @@ abstract class AppRouter {
             ),
             child: const SearchView(),
           );
+        },
+      ),
+      GoRoute(
+        path: routecategoryselection,
+        builder: (BuildContext context, GoRouterState state) {
+          return const CategorySelectionView();
         },
       ),
     ],

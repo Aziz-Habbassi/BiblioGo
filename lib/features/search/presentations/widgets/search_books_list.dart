@@ -20,11 +20,17 @@ class SearchBooksList extends StatelessWidget {
           );
         } else if (state is SearchBooksLoading) {
           return SliverToBoxAdapter(
-            child: SpinKitFadingCube(size: 100, color: Colors.deepPurpleAccent),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: SpinKitFadingCube(
+                size: 100,
+                color: Colors.deepPurpleAccent,
+              ),
+            ),
           );
         } else {
           return SliverToBoxAdapter(
-            child: Center(child: Icon(Icons.error, size: 64)),
+            child: Center(child: Text("Nothing to show...")),
           );
         }
       },
