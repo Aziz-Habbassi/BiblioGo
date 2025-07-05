@@ -21,7 +21,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         Text(
-          bookModel.volumeInfo!.title!,
+          bookModel.volumeInfo!.title ?? "title not available",
           style: Styles.style1.copyWith(fontSize: 23),
           textAlign: TextAlign.center,
           maxLines: 2,

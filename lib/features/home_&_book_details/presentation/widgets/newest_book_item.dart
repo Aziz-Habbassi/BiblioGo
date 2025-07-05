@@ -37,7 +37,7 @@ class NewestBookItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      bookModel.volumeInfo!.title!,
+                      bookModel.volumeInfo!.title ?? "title not available",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.style1,
@@ -51,9 +51,7 @@ class NewestBookItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        bookModel.accessInfo!.pdf!.isAvailable == true
-                            ? "available"
-                            : "not available",
+                        bookModel.volumeInfo!.language ?? "",
                         style: Styles.style2.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,

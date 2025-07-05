@@ -30,7 +30,7 @@ class SearchBooksList extends StatelessWidget {
           );
         } else {
           return SliverToBoxAdapter(
-            child: Center(child: Text("Nothing to show...")),
+            child: Center(child: Text("Search and enjoy reading 😊...")),
           );
         }
       },
