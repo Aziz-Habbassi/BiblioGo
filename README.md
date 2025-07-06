@@ -15,12 +15,12 @@ A beautiful Flutter app for reading books online with an intuitive user interfac
 
 | Feature | Screenshot |
 |:---:|:---:|
-| **Splash Screen** | <img src="screenshots\splash_view.png" width="150"> |
-| **Category Selection** | <img src="screenshots\choose_category.png" width="150"> |
-| **Book Page** | <img src="screenshots\book_view.png" width="150"> |
-| **Search Functionality** | <img src="screenshots\search_view.png" width="150"> |
-| **Dark Theme** | <img src="screenshots\dark_home.png" width="150"> |
-| **Light Theme** | <img src="screenshots\light_home.png" width="150"> |
+| **Splash Screen** | <img src="screenshots/splash_view.png" width="150"> |
+| **Category Selection** | <img src="screenshots/choose_category.png" width="150"> |
+| **Book Page** | <img src="screenshots/book_view.png" width="150"> |
+| **Search Functionality** | <img src="screenshots/search_view.png" width="150"> |
+| **Dark Theme** | <img src="screenshots/dark_home.png" width="150"> |
+| **Light Theme** | <img src="screenshots/light_home.png" width="150"> |
 
 ## Architecture 🏗️
 
