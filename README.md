@@ -13,14 +13,18 @@ A beautiful Flutter app for reading books online with an intuitive user interfac
 
 ## Screenshots 📱
 
-| Feature | Screenshot |
+|  Splash Screen | Category Selection |
 |:---:|:---:|
-| **Splash Screen** | <img src="screenshots/splash_view.png" width="150"> |
-| **Category Selection** | <img src="screenshots/choose_category.png" width="150"> |
-| **Book Page** | <img src="screenshots/book_view.png" width="150"> |
-| **Search Functionality** | <img src="screenshots/search_view.png" width="150"> |
-| **Dark Theme** | <img src="screenshots/dark_home.png" width="150"> |
-| **Light Theme** | <img src="screenshots/light_home.png" width="150"> |
+| ![Splash Screen](screenshots/splash_view.png) | ![Category Selection](creenshots/choose_category.png) |
+
+| Book Page | search view |
+|:---:|:---:|
+| ![Book Page](screenshots/book_view.png) | ![search view](screenshots/search_view.png) |
+
+| Dark Theme | search view |
+|:---:|:---:|
+| ![Book Page](screenshots/dark_home.png) | ![Light Theme](screenshots/light_home.png) |
+
 
 ## Architecture 🏗️
 
@@ -117,18 +121,6 @@ We welcome contributions! Please feel free to submit a Pull Request. For major c
 2. Write meaningful commit messages
 3. Test your changes thoroughly
 4. Update documentation as needed
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support 💬
-
-If you have any questions or issues, please:
-
-1. Check the [Issues](https://github.com/yourusername/biblio-go/issues) page
-2. Create a new issue if your problem isn't already reported
-3. Provide detailed information about your issue
 
 ## Roadmap 🗺️
 
